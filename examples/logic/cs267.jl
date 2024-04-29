@@ -81,6 +81,40 @@ end
 pr(@dice mytable())
 
 
+function mytable2() 
+    x = flip(0.5)
+    y = flip(0.5)
+    z = flip(0.5)
+    world_id = [x,y,z]
+    world_id = DistUInt(world_id)
+    world_id
+end
+pr(@dice mytable2())
+#Do exponential like this
+
+
+#Not necessary (would go in between lines 89 and 90)
+    if prob_equals(world_id, DistUInt{3}(0))
+        (true, true, true)
+    elseif prob_equals(world_id, DistUInt{3}(1))
+        (true, true, false)
+    elseif prob_equals(world_id, DistUInt{3}(2))
+        (true, false, true)
+    elseif prob_equals(world_id, DistUInt{3}(3))
+        (true, false, false)
+    elseif prob_equals(world_id, DistUInt{3}(4))
+        (false, true, true)
+    elseif prob_equals(world_id, DistUInt{3}(5))
+        (false, true, false)
+    elseif prob_equals(world_id, DistUInt{3}(6))
+        (false, false, true)
+    else
+        (false, false, false)
+    end
+end
+
+
+
 
 #####################################################
 # what about events that are more than a single world?
