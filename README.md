@@ -33,3 +33,7 @@ Or from the command line:
 ```
 julia --project examples/graph_reachability.jl
 ```
+_________________________________________________________________
+FIX
+DistUInt -> creates a distribution of either a vector or an int
+You can specify the bit size with {}
