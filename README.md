@@ -34,6 +34,6 @@ Or from the command line:
 julia --project examples/graph_reachability.jl
 ```
 _________________________________________________________________
-FIX
-DistUInt -> creates a distribution of either a vector or an int
-You can specify the bit size with {}
+FIX  
+DistUInt takes in a value that indicates the range of probabilities (such as through a vector of coin flips or an integer) and returns a discrete distribution that includes the probability for each integer value.
+You can specify the bit size with {}.
