@@ -92,6 +92,40 @@ end
 pr(@dice mytable2())
 #Do exponential like this
 
+function mytable3(numBits)
+    world_id = []
+    for j = 1:numBits
+        x = flip(0.5)
+        print(x)
+        push!(world_id, x)
+    end
+    world_id = DistUInt(world_id)
+    world_id
+end
+pr(@dice mytable3())
+
+#e -> exp()
+function myExp(beta, in)
+    inputs = []
+    outputs = []
+    #first get the input values for flip
+    for i = 1:in
+        twoOut = 2^i
+        val = (exp(beta/twoOut))/(1+exp(beta/twoOut))
+        push!(inputs, val)
+    end
+    outputs = []
+    #then use flip
+    for j = 1:in
+        y = flip(inputs[j])
+        #y = flip(1/j) -> This works ( mean output is weird but at least it works
+        print(y)
+        push!(outputs, y) #Causing an error
+    end
+    final = DistUInt(outputs)
+end
+pr(@dice myExp(3,4))
+
 
 #Not necessary (would go in between lines 89 and 90)
     if prob_equals(world_id, DistUInt{3}(0))
