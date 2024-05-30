@@ -35,5 +35,5 @@ julia --project examples/graph_reachability.jl
 ```
 _________________________________________________________________
 FIX  
-DistUInt takes in a value that indicates the range of probabilities (such as through a vector of coin flips or an integer) and returns a discrete distribution that includes the probability for each integer value.
-You can specify the bit size with {}.
+DistUInt() takes in a value that indicates the range of probabilities (such as through a vector of coin flips or an integer) and returns a discrete distribution that includes the probability for each integer value.
+You can specify the bit size with {} if you want a unique size - otherwise, there are the built-in sizes of 8, 16 and 32, appropriately labeled DistUInt8, DistUInt16 and DistUInt32 respectively.
