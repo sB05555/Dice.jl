@@ -107,7 +107,6 @@ pr(@dice mytable3())
 #e -> exp()
 function myExp(beta, in)
     inputs = []
-    outputs = []
     #first get the input values for flip
     for i = 1:in
         twoOut = 2^i
